@@ -7,7 +7,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Pattern;
 
-import org.springframework.core.io.ClassPathResource;
+import javax.servlet.ServletContext;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.demo.exception.NotFoundException;
@@ -17,11 +19,13 @@ import com.example.demo.vo.ZipCodeVO;
 @Service
 public class ZipCodeServiceImpl implements ZipCodeService {
 
+	@Autowired
+	private ServletContext context;
+	
 	@Override
 	public ZipCodeVO getZipCodeInfo(String zipCode) throws IOException, NotFoundException {
-		ClassPathResource resourceOne = new ClassPathResource("static/CPMexico.txt");
-		File resource = resourceOne.getFile();
 
+		File resource = new File(context.getRealPath("/WEB-INF/CPMexico.txt")); //new ClassPathResource("static/CPMexico.txt"); 
 		List<String> data = null;
 		try {
 			data = Files.readAllLines(resource.toPath());

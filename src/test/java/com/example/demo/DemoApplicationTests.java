@@ -7,9 +7,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Pattern;
 
+import javax.servlet.ServletContext;
+
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.core.io.ClassPathResource;
 
 import com.example.demo.vo.SettlementsVO;
 import com.example.demo.vo.ZipCodeVO;
@@ -17,10 +19,17 @@ import com.example.demo.vo.ZipCodeVO;
 @SpringBootTest
 class DemoApplicationTests {
 
+	@Autowired
+	private ServletContext context;
+	
 	@Test
 	void contextLoads() throws IOException {
-		ClassPathResource resourceOne = new ClassPathResource("static/test.txt");
-		File resource = resourceOne.getFile();
+		
+		//File initialFile = new File(context.getRealPath("/WEB-INF/test.txt"));
+		//if(initialFile.exists())
+		//	System.out.println("existe!!");
+		
+		File resource = new File(context.getRealPath("/WEB-INF/test.txt"));
 		List<String> data = null;
 		try {
 			data = Files.readAllLines(resource.toPath());
