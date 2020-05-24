@@ -50,7 +50,7 @@ Pruebas del servicio
 
 ## Versiones
 
-Versiones estables disponibles, ver en [tags de este repositorio](https://github.com/jorgeluis128-jlbr/coding-challenge/tags).
+Versiones estables disponibles, ver en [tags de este repositorio](https://github.com/jorgeluis128-jlbr/demo/tags).
 
 ## Authors
 
