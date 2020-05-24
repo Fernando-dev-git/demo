@@ -1,0 +1,6 @@
+d_codigo|d_asenta|d_tipo_asenta|D_mnpio|d_estado|d_ciudad|d_CP|c_estado|c_oficina|c_CP|c_tipo_asenta|c_mnpio|id_asenta_cpcons|d_zona|c_cve_ciudad
+01000|San �ngel|Colonia|�lvaro Obreg�n|Ciudad de M�xico|Ciudad de M�xico|01001|09|01001||09|010|0001|Urbano|01
+01010|Los Alpes|Colonia|�lvaro Obreg�n|Ciudad de M�xico|Ciudad de M�xico|01001|09|01001||09|010|0005|Urbano|01
+01020|Guadalupe Inn|Colonia|�lvaro Obreg�n|Ciudad de M�xico|Ciudad de M�xico|01001|09|01001||09|010|0006|Urbano|01
+01030|Axotla|Pueblo|�lvaro Obreg�n|Ciudad de M�xico|Ciudad de M�xico|01001|09|01001||28|010|0009|Urbano|01
+01030|Florida|Colonia|�lvaro Obreg�n|Ciudad de M�xico|Ciudad de M�xico|01001|09|01001||09|010|0010|Urbano|01
