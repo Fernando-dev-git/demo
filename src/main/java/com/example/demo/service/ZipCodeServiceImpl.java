@@ -19,7 +19,9 @@ public class ZipCodeServiceImpl implements ZipCodeService {
 
 	@Override
 	public ZipCodeVO getZipCodeInfo(String zipCode) throws IOException, NotFoundException {
-		File resource = new ClassPathResource("static/CPMexico.txt").getFile();
+		ClassPathResource resourceOne = new ClassPathResource("static/CPMexico.txt");
+		File resource = resourceOne.getFile();
+
 		List<String> data = null;
 		try {
 			data = Files.readAllLines(resource.toPath());

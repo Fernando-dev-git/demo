@@ -19,7 +19,8 @@ class DemoApplicationTests {
 
 	@Test
 	void contextLoads() throws IOException {
-		File resource = new ClassPathResource("static/test.txt").getFile();
+		ClassPathResource resourceOne = new ClassPathResource("static/test.txt");
+		File resource = resourceOne.getFile();
 		List<String> data = null;
 		try {
 			data = Files.readAllLines(resource.toPath());
@@ -28,17 +29,17 @@ class DemoApplicationTests {
 		}
 		if (data != null) {
 			data.remove(0);
-			for(String str : data) {
+			for (String str : data) {
 				ZipCodeVO zipCodeVOReturn = getZipCodeFormatted(str, "01020");
-				if(zipCodeVOReturn != null)
+				if (zipCodeVOReturn != null)
 					System.out.println(zipCodeVOReturn.toString());
 			}
 		}
 	}
-	
-	private ZipCodeVO getZipCodeFormatted (String line, String searchValue) {
-		String [] strSplit = line.split(Pattern.quote("|"));
-		if(strSplit[0].equals(searchValue)) {
+
+	private ZipCodeVO getZipCodeFormatted(String line, String searchValue) {
+		String[] strSplit = line.split(Pattern.quote("|"));
+		if (strSplit[0].equals(searchValue)) {
 			ZipCodeVO zipCodeVO = new ZipCodeVO();
 			zipCodeVO.setZip_code(strSplit[0]);
 			zipCodeVO.setLocality(strSplit[6]);
@@ -48,7 +49,7 @@ class DemoApplicationTests {
 			settlements.add(new SettlementsVO(strSplit[2], strSplit[14], strSplit[3]));
 			zipCodeVO.setSettlements(settlements);
 			return zipCodeVO;
-		} 
+		}
 		return null;
 	}
 
